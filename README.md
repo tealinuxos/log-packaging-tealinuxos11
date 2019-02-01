@@ -46,5 +46,8 @@ dpkg -i customizer*.deb
 sudo apt --fix-broken install -y
 ```
 
+mendapat error yang gajelas saat menggunakan customizer
+
+mencoba cubic `https://launchpad.net/cubic`
 
 ------------------------------------
