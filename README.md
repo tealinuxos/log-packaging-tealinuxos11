@@ -1,6 +1,10 @@
 # log-packaging-tealinuxos11
 ===============================
+
 -------------------------------------------
+
+referensi `https://help.ubuntu.com/community/LiveCDCustomization`
+
 ## Panduan unpack iso pertama kali ##
 
 ```shell
