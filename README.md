@@ -32,4 +32,5 @@ memilih cubic sebagai tools remaster tealinuxos 11
 ------------------------------------
 
 default wallpaper config dir `/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
+
 default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
