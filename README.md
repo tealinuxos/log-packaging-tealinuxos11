@@ -38,4 +38,13 @@ Failed to copy mtab, error=1
 
 mencari fix atau pindah tools lain `https://github.com/kamilion/customizer`
 
+mencoba customizer
+```
+cd ~
+wget https://github.com/kamilion/customizer/releases/download/4.2.0-0/customizer_4.2.0-0+20180825_all.deb
+dpkg -i customizer*.deb
+sudo apt --fix-broken install -y
+```
+
+
 ------------------------------------
