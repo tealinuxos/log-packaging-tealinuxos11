@@ -1,5 +1,4 @@
 # log-packaging-tealinuxos11
-===============================
 
 -------------------------------------------
 
@@ -55,3 +54,5 @@ mendapat error yang gajelas saat menggunakan customizer
 mencoba cubic `https://launchpad.net/cubic`
 
 ------------------------------------
+
+default wallpaper config dir `/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
