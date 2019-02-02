@@ -30,7 +30,23 @@ $ sudo apt install cubic
 > memilih cubic sebagai tools remaster tealinuxos 11
 
 ------------------------------------
+## Langkah - Langkah remastering
+* buka cubic, masukkan password user
+* pilih project directory atau buat baru lalu next
+* pilih iso yang digunakan
+* pada custom iso isikan lalu next
+``` 
+filename : TealinuxOS-11-amd64.iso
+volume id : TealinuxOS 11 amd64
+release name : Stevia
+disk name : TealinuxOS 11 "Stevia" amd64
+```
+* kemudian akan masuk ke chroot. disini sudah bisa ngoprek kalau sudah next
+* lalu masuk ke package manifest "ganti bila perlu" lalu next
+* lalu cubic akan generate squashfs, iso, md5 dll. bisa ditunggu
+* selesai, iso dapat ditest maupun di distribusikan
 
+---
 default wallpaper config dir `/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
 
 default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
