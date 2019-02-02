@@ -35,4 +35,13 @@ default wallpaper config dir `/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-
 
 default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
 
-isolinux config file `<PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg`
+---
+## Mulai Mengubah Isolinux, GRUB dan Disk info
+ubah splash xubuntu menjadi splash TealinuxOS pada `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.png`
+
+ubah kata xubuntu menjadi TealinuxOS 11 pada 
+
+* isolinux config file `<PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg`
+* grub config file `<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg`
+* disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
+
