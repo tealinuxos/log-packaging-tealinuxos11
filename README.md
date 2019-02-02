@@ -45,3 +45,5 @@ ubah kata xubuntu menjadi TealinuxOS 11 pada
 * grub config file `<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg`
 * disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
 
+$ ls -w1 | cpio -o -F bootlogo
+
