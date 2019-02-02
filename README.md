@@ -45,9 +45,18 @@ ubah kata xubuntu menjadi TealinuxOS 11 pada
 
 ---
 ## Mulai Mengubah Splash pada Isolinux
-ubah splash xubuntu menjadi splash TealinuxOS pada `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.png` dan `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.pcx`
+persiapkan splash.png dengan ukuran 640 x 480px lalu buat splash.pcx
+```
+cara membuat splash.pcx
+* buka splash.png dengan gimp
+* pada menu gimp, pilih "Image > Mode > Indexed..."
+* pilih "Generate optimum palette"
+* pada "Maximum number of colors" isikan angka 14
+* pada "Color Dithering" pilih "Floyd-Steinburg (Reduced color bleeding" lalu gambar akan menjadi agak aneh
+* lalu convert dan export sebagai splash.pcx
+```
 
-> edit splash.pcx dengan gimp
+ubah splash xubuntu menjadi splash TealinuxOS pada `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.png` dan `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.pcx`
 
 lalu copy `<PROJECT-FOLDER>/custom-live-iso/isolinux/bootlogo` ke directory baru
 
@@ -62,3 +71,6 @@ lalu pack kembali
 ```console
 $ ls -w1 | cpio -o -F bootlogo
 ```
+kemudian kembalikan bootlogo ke isolinux
+
+---
