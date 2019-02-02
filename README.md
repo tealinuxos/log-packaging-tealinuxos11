@@ -37,13 +37,28 @@ default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
 
 ---
 ## Mulai Mengubah Isolinux, GRUB dan Disk info
-ubah splash xubuntu menjadi splash TealinuxOS pada `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.png`
-
 ubah kata xubuntu menjadi TealinuxOS 11 pada 
 
 * isolinux config file `<PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg`
 * grub config file `<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg`
 * disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
 
-$ ls -w1 | cpio -o -F bootlogo
+---
+## Mulai Mengubah Splash pada Isolinux
+ubah splash xubuntu menjadi splash TealinuxOS pada `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.png` dan `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.pcx`
 
+> edit splash.pcx dengan gimp
+
+lalu copy `<PROJECT-FOLDER>/custom-live-iso/isolinux/bootlogo` ke directory baru
+
+unpack bootlogo dan hapus bootlogo lama
+``` console
+$ cpio -i -F bootlogo
+$ rm -rf bootlogo
+```
+kemudian replace `splash.pcx` xubuntu dengan `splash.pcx` tealinuxos
+
+lalu pack kembali
+```console
+$ ls -w1 | cpio -o -F bootlogo
+```
