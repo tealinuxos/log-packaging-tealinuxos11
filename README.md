@@ -34,3 +34,5 @@ $ sudo apt install cubic
 default wallpaper config dir `/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
 
 default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
+
+isolinux config file `<PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg`
