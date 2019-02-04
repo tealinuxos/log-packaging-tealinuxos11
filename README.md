@@ -91,7 +91,7 @@ kemudian kembalikan bootlogo ke isolinux
 
 ---
 ## (OPTIONAL) Menambahkan patch untuk nvidia pci error
-patch ini berlaku untuk laptop intel core generasi 6,7 yang menggunakan vga diskrit nvidia. contoh laptop asus ROG, X550V, X450J
+patch ini berlaku untuk laptop intel core generasi 6,7 yang menggunakan vga diskrit nvidia. contoh laptop asus ROG, X550V, 15-ab549tx
 
 cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
 ```
