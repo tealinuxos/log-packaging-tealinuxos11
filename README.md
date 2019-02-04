@@ -90,3 +90,14 @@ $ ls -w1 | cpio -o -F bootlogo
 kemudian kembalikan bootlogo ke isolinux
 
 ---
+## Menambahkan patch untuk nvidia pci error
+patch ini berlaku untuk laptop intel core generasi 6,7 yang menggunakan vga diskrit nvidia. contoh laptop asus ROG, X550V, X450J
+
+cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
+```
+<PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg
+<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg
+/etc/default/grub
+```
+
+---
