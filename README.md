@@ -89,12 +89,15 @@ kemudian kembalikan bootlogo ke isolinux
 Copy asset wallpaper ke `/usr/share/tealinux/wallpaper` (kalau tidak ada buat dulu)
 
 Ubah default wallpaper pada `/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
-```
-  dari
-    <property name="image-path" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-  menjadi
-    <property name="image-path" type="string" value="/usr/share/tealinux/wallpaper/defaults.jpg"/>
-```
+
+dari
+
+```   <property name="image-path" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>```
+
+menjadi
+
+```    <property name="image-path" type="string" value="/usr/share/tealinux/wallpaper/defaults.jpg"/>```
+
 ---
 ## (OPTIONAL) Menambahkan patch untuk nvidia pci error
 patch ini berlaku untuk laptop intel core generasi 6,7 yang menggunakan vga diskrit nvidia. contoh laptop asus ROG, X550V, 15-ab549tx
