@@ -90,6 +90,7 @@ kemudian kembalikan bootlogo ke isolinux
 
 ## Mulai Menambahkan Wallpaper Tealinux
 Copy asset wallpaper ke `/usr/share/tealinux/wallpaper` (kalau tidak ada buat dulu)
+
 Ubah default wallpaper pada `/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
 ```
   dari
