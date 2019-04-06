@@ -47,10 +47,6 @@ disk name : TealinuxOS 11 "Stevia" amd64
 * selesai, iso dapat ditest maupun di distribusikan
 
 ---
-
-default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
-
----
 ## Mulai Mengubah Isolinux, GRUB dan Disk info
 ubah kata xubuntu menjadi TealinuxOS 11 pada 
 
@@ -88,6 +84,7 @@ $ ls -w1 | cpio -o -F bootlogo
 ```
 kemudian kembalikan bootlogo ke isolinux
 
+---
 ## Mulai Menambahkan Wallpaper Tealinux
 Copy asset wallpaper ke `/usr/share/tealinux/wallpaper` (kalau tidak ada buat dulu)
 
@@ -110,3 +107,8 @@ cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
 ```
 
 ---
+
+default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
+
+---
+
