@@ -56,7 +56,7 @@ ubah kata xubuntu menjadi TealinuxOS 11 pada
 
 ---
 ## Mulai Mengubah Splash pada Isolinux
-persiapkan splash.png dengan ukuran 640 x 480px lalu buat splash.pcx
+persiapkan `splash.png` tealinux dengan ukuran `640 x 480px` lalu buat `splash.pcx`
 ```
 cara membuat splash.pcx
 * buka splash.png dengan gimp
