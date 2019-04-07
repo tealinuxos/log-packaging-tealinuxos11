@@ -49,7 +49,7 @@ disk name : TealinuxOS 11 "Stevia" amd64
 ## Langkah Pack (setelah update kernel & ganti plymouth)
 * masuk chroot
 * lihat kernel yang terinstall `ls /lib/modules/`
-* buat ramdisk `mkinitramfs <KERNEL-BARU> -o /tmp/initrd`
+* buat ramdisk `mkinitramfs <KERNEL-AKTIF> -o /tmp/initrd`
 * kemudian copy file `<PROJECT-FOLDER>/squashfs-root/tmp/initrd` ke `<PROJECT-FOLDER>/custom-live-iso/casper/`
 * **<! pastikan versi kernel `vmlinuz` dan `initrd` sama !>**
 
@@ -61,7 +61,6 @@ ubah kata xubuntu menjadi TealinuxOS 11 pada
 * grub config file `<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg`
 * disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
 
----
 ## Mulai Mengubah Splash pada Isolinux
 persiapkan `splash.png` tealinux dengan ukuran `640 x 480px` lalu buat `splash.pcx`
 ```
