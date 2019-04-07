@@ -81,6 +81,7 @@ kemudian replace `splash.pcx` xubuntu dengan `splash.pcx` tealinuxos
 lalu pack kembali
 ```console
 $ ls -w1 | cpio -o -F bootlogo
+$ ls | grep -v bootlogo | xargs rm
 ```
 kemudian kembalikan bootlogo ke isolinux
 
