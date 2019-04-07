@@ -51,6 +51,7 @@ disk name : TealinuxOS 11 "Stevia" amd64
 * lihat kernel yang terinstall `ls /lib/modules/`
 * buat ramdisk `mkinitramfs <KERNEL-BARU> -o /tmp/initrd`
 * kemudian copy file `<PROJECT-FOLDER>/squashfs-root/tmp/initrd` ke `<PROJECT-FOLDER>/custom-live-iso/casper/`
+* **<! pastikan versi kernel `vmlinuz` dan `initrd` sama !>**
 
 ---
 ## Mulai Mengubah Isolinux, GRUB dan Disk info
