@@ -46,6 +46,12 @@ disk name : TealinuxOS 11 "Stevia" amd64
 * lalu cubic akan generate squashfs, iso, md5 dll. bisa ditunggu
 * selesai, iso dapat ditest maupun di distribusikan
 
+## Langkah Pack (setelah update kernel & ganti plymouth)
+* masuk chroot
+* lihat kernel yang terinstall `ls /lib/modules/`
+* buat ramdisk `mkinitramfs <KERNEL-BARU> -o /tmp/initrd`
+* kemudian copy file `<PROJECT-FOLDER>/squashfs-root/tmp/initrd` ke `<PROJECT-FOLDER>/custom-live-iso/casper/`
+
 ---
 ## Mulai Mengubah Isolinux, GRUB dan Disk info
 ubah kata xubuntu menjadi TealinuxOS 11 pada 
