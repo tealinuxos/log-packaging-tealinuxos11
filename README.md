@@ -52,9 +52,10 @@ disk name : TealinuxOS 11 "Stevia" amd64
 1. buat ramdisk `mkinitramfs <KERNEL-AKTIF> -o /tmp/initrd`
 1. kemudian simpan `<PROJECT-FOLDER>/squashfs-root/tmp/initrd` di folder baru
 1. lalu copy iso tealinux yang hampir jadi **(ISO INI NANTI AKAN MATI JADI BUAT BACKUP)**
-1. kemudian instal `file-roller` dan buka iso copy-an pada langkah 5 dengan file roller
-1. selanjutnya replace `casper/initrd` pada iso dengan `initrd` yang disimpan pada langkah 4
-1. **<! pastikan versi kernel `vmlinuz` dan `initrd` sama !>**
+1. kemudian instal `file-roller` dan buka iso copy-an pada `langkah 5` dengan file roller
+1. selanjutnya replace `casper/initrd` pada iso dengan `initrd` yang disimpan pada `langkah 4`
+1. lalu buat project baru pada `cubic` dengan iso yang telah dimodif pada `langkah 7`
+1. generate iso, dan iso yang baru akan menggunakan plymouth dan kernel baru
 
 ---
 ## Mulai Mengubah Isolinux, GRUB dan Disk info
