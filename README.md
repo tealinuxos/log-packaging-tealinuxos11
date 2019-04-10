@@ -122,6 +122,7 @@ default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
 `isolinux` masuk ke `custom-live-iso/isolinux`
 
 `whisker/*.png` masuk ke `/usr/share/pixmaps/`
+
 `whisker/*.rc` masuk ke `/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
 
 ---
