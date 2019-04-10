@@ -66,7 +66,7 @@ ubah kata xubuntu menjadi TealinuxOS 11 pada
 * disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
 
 ## Mulai Mengubah Splash pada Isolinux
-persiapkan `splash.png` tealinux dengan ukuran `640 x 480px` lalu buat `splash.pcx`
+1. persiapkan `splash.png` tealinux dengan ukuran `640 x 480px` lalu buat `splash.pcx`
 ```
 cara membuat splash.pcx
 * buka splash.png dengan gimp
@@ -76,24 +76,20 @@ cara membuat splash.pcx
 * pada "Color Dithering" pilih "Floyd-Steinburg (Reduced color bleeding" lalu gambar akan menjadi agak aneh
 * lalu convert dan export sebagai splash.pcx
 ```
-
-ubah splash xubuntu menjadi splash TealinuxOS pada `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.png` dan `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.pcx`
-
-lalu copy `<PROJECT-FOLDER>/custom-live-iso/isolinux/bootlogo` ke directory baru
-
-unpack bootlogo dan hapus bootlogo lama
+1. ubah splash xubuntu menjadi splash TealinuxOS pada `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.png` dan `<PROJECT-FOLDER>/custom-live-iso/isolinux/splash.pcx`
+1. lalu copy `<PROJECT-FOLDER>/custom-live-iso/isolinux/bootlogo` ke directory baru
+1. unpack bootlogo dan hapus bootlogo lama
 ``` console
 $ cpio -i -F bootlogo
 $ rm -rf bootlogo
 ```
-kemudian replace `splash.pcx` xubuntu dengan `splash.pcx` tealinuxos
-
-lalu pack kembali
+1. kemudian replace `splash.pcx` xubuntu dengan `splash.pcx` tealinuxos
+1. lalu pack kembali
 ```console
 $ ls -w1 | cpio -o -F bootlogo
 $ ls | grep -v bootlogo | xargs rm
 ```
-kemudian kembalikan bootlogo ke isolinux
+1. kemudian kembalikan bootlogo ke isolinux
 
 ---
 ## Mulai Menambahkan Wallpaper Tealinux
