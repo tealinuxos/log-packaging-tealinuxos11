@@ -117,5 +117,12 @@ cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
 
 default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
 
+`wallpaper` masuk ke `/usr/share/tealinux/wallpaper`
+
+`isolinux` masuk ke `custom-live-iso/isolinux`
+
+`whisker/*.png` masuk ke `/usr/share/pixmaps/`
+`whisker/*.rc` masuk ke `/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
+
 ---
 
