@@ -125,5 +125,15 @@ default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
 
 `whisker/*.rc` masuk ke `/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
 
+`Themes` masuk ke `/usr/share/themes`
+
+`Plymouth` masuk ke `/usr/share/plymouth/themes`
+
+`ubiquity-slideshow` masuk ke `/usr/share/ubiquity-slideshow`
+
+`whisker/*.png` masuk ke `/usr/share/pixmaps/`
+
+`whisker/*.rc` masuk ke `/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
+
 ---
 
