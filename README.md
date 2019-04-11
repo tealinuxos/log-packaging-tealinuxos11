@@ -139,6 +139,10 @@ $ ls | grep -v bootlogo | xargs rm
 
 ### Menambahkan plymouth (bootanimation)
 * `Plymouth` masuk ke `/usr/share/plymouth/themes`
+* edit `/usr/share/plymouth/themes/default.plymouth`
+* edit `/usr/share/plymouth/themes/text.plymouth`
+* jika sudah mask ke `chroot` lalu `update-initramfs -u`
+* lalu lakukan [PACK-ULANG](https://github.com/catzy007/log-packaging-tealinuxos11#langkah-pack-setelah-update-kernel--ganti-plymouth)
 
 ### Menambahkan background saat installasi
 * default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
