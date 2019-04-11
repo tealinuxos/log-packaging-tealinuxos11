@@ -77,6 +77,7 @@ $ sudo apt purge libreoffice -y
 ## Mulai Menginstall Aplikasi Default
 * pastikan list app default telah diselesaikan oleh `software research`
 * masuk `chroot`
+* update dan upgrade dulu `sudo apt update && sudo apt upgrade -y`
 * buka list default apps
 * misal akan menginstall `vlc`
 
