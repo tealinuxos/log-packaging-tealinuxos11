@@ -46,7 +46,7 @@ disk name : TealinuxOS 11 "Stevia" amd64
 * selesai, iso dapat ditest maupun di distribusikan
 
 ## Langkah Pack (setelah update kernel & ganti plymouth)
-1. masuk chroot
+1. masuk `chroot`
 1. lihat kernel yang terinstall `ls /lib/modules/`
 1. buat ramdisk `mkinitramfs <KERNEL-AKTIF> -o /tmp/initrd`
 1. kemudian simpan `<PROJECT-FOLDER>/squashfs-root/tmp/initrd` di folder baru
@@ -55,6 +55,36 @@ disk name : TealinuxOS 11 "Stevia" amd64
 1. selanjutnya replace `casper/initrd` pada iso dengan `initrd` yang disimpan pada `langkah 4`
 1. lalu buat project baru pada `cubic` dengan iso yang telah dimodif pada `langkah 7`
 1. generate iso, dan iso yang baru akan menggunakan plymouth dan kernel baru
+
+---------------------------
+## Mulai Menghapus Aplikasi
+* pastikan list app yang dihapus telah diselesaikan oleh `software research`
+* masuk `chroot`
+* buka list app yang dihapus
+* **misal** akan menghapus `libreoffice`
+
+```
+$ sudo dpkg -l | grep libreoffice
+$ sudo apt purge libreoffice -y
+```
+
+* kalau belum bersih tinggal `purge` app yang ada pada `dpkg -l | grep libreoffice`
+* selesaikan list apps yang dihapus
+* kalau sudah maka tinggal `sudo apt autoremove && sudo apt autoclean`
+
+-------------------------------------
+## Mulai Menginstall Aplikasi Default
+* pastikan list app default telah diselesaikan oleh `software research`
+* masuk `chroot`
+* buka list default apps
+* misal akan menginstall `vlc`
+
+```
+$ sudo apt update
+$ sudo apt install vlc -y
+```
+* selesaikan list app default
+* kalau ada app yang tidak masuk apt, coba tanya `software research`
 
 ----------------------------------------------
 ## Mulai Mengubah Isolinux, GRUB dan Disk info
