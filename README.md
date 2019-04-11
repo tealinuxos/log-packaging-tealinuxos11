@@ -58,7 +58,7 @@ disk name : TealinuxOS 11 "Stevia" amd64
 
 ----------------------------------------------
 ## Mulai Mengubah Isolinux, GRUB dan Disk info
-ubah kata xubuntu menjadi TealinuxOS 11 pada 
+ubah kata `xubuntu` menjadi `TealinuxOS 11` pada 
 
 * isolinux config file `<PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg`
 * grub config file `<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg`
