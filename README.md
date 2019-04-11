@@ -102,7 +102,7 @@ $ ls | grep -v bootlogo | xargs rm
 
 ```    <property name="image-path" type="string" value="/usr/share/tealinux/wallpaper/defaults.jpg"/>```
 
-### Menambahkan whisker (*bahasa windowsnya start menu icon)
+### Menambahkan whisker (start menu icon)
 * `whisker/*.png` masuk ke `/usr/share/pixmaps/`
 * `whisker/*.rc` masuk ke `/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
 
@@ -116,10 +116,9 @@ $ ls | grep -v bootlogo | xargs rm
 * default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
 
 -----------------------------------------------
-
 ## Menambahkan Asset Dokumentasi Tealinux
 ### Menambahkan ubiquity-slideshow (slideshow saat proses installasi)
-*`ubiquity-slideshow` masuk ke `/usr/share/ubiquity-slideshow`
+* `ubiquity-slideshow` masuk ke `/usr/share/ubiquity-slideshow`
 
 ------------------------------------------------------
 ## (OPTIONAL) Menambahkan patch untuk nvidia pci error
