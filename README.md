@@ -1,7 +1,6 @@
 # log-packaging-tealinuxos11
 
--------------------------------------------
-
+-------------------------
 ## Mencari tools remaster
 referensi utama <https://help.ubuntu.com/community/LiveCDCustomization>
 
@@ -29,7 +28,7 @@ $ sudo apt install cubic
 ```
 > memilih cubic sebagai tools remaster tealinuxos 11
 
-------------------------------------
+--------------------------------
 ## Langkah - Langkah remastering
 * buka cubic, masukkan password user
 * pilih project directory atau buat baru lalu next
@@ -57,7 +56,7 @@ disk name : TealinuxOS 11 "Stevia" amd64
 1. lalu buat project baru pada `cubic` dengan iso yang telah dimodif pada `langkah 7`
 1. generate iso, dan iso yang baru akan menggunakan plymouth dan kernel baru
 
----
+----------------------------------------------
 ## Mulai Mengubah Isolinux, GRUB dan Disk info
 ubah kata xubuntu menjadi TealinuxOS 11 pada 
 
@@ -65,7 +64,9 @@ ubah kata xubuntu menjadi TealinuxOS 11 pada
 * grub config file `<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg`
 * disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
 
-## Mulai Mengubah Splash pada Isolinux
+-------------------------------------------
+## Mulai Menambahkan Asset Artwork Tealinux
+### Menambahkan Splash Isolinux (gambar saat memilih mode installasi)
 - persiapkan `splash.png` tealinux dengan ukuran `640 x 480px` lalu buat `splash.pcx`
 ```
 cara membuat splash.pcx
@@ -91,8 +92,7 @@ $ ls | grep -v bootlogo | xargs rm
 ```
 - kemudian kembalikan bootlogo ke isolinux
 
----
-## Mulai Menambahkan Wallpaper Tealinux
+### Menambahkan wallpaper
 - Copy asset wallpaper ke `/usr/share/tealinux/wallpaper` (kalau tidak ada buat dulu)
 - Ubah default wallpaper pada `/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
 - dari
@@ -102,7 +102,26 @@ $ ls | grep -v bootlogo | xargs rm
 
 ```    <property name="image-path" type="string" value="/usr/share/tealinux/wallpaper/defaults.jpg"/>```
 
----
+### Menambahkan whisker (*bahasa windowsnya start menu icon)
+* `whisker/*.png` masuk ke `/usr/share/pixmaps/`
+* `whisker/*.rc` masuk ke `/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
+
+### Menambahkan Custom Themes
+* `Themes` masuk ke `/usr/share/themes`
+
+### Menambahkan plymouth (bootanimation)
+* `Plymouth` masuk ke `/usr/share/plymouth/themes`
+
+### Menambahkan background saat installasi
+* default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
+
+-----------------------------------------------
+
+## Menambahkan Asset Dokumentasi Tealinux
+### Menambahkan ubiquity-slideshow (slideshow saat proses installasi)
+*`ubiquity-slideshow` masuk ke `/usr/share/ubiquity-slideshow`
+
+------------------------------------------------------
 ## (OPTIONAL) Menambahkan patch untuk nvidia pci error
 patch ini berlaku untuk laptop intel core generasi 6,7 yang menggunakan vga diskrit nvidia. contoh laptop asus ROG, X550V, 15-ab549tx
 
@@ -114,26 +133,3 @@ cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
 ```
 
 ---
-
-default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
-
-`wallpaper` masuk ke `/usr/share/tealinux/wallpaper`
-
-`isolinux` masuk ke `custom-live-iso/isolinux`
-
-`whisker/*.png` masuk ke `/usr/share/pixmaps/`
-
-`whisker/*.rc` masuk ke `/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
-
-`Themes` masuk ke `/usr/share/themes`
-
-`Plymouth` masuk ke `/usr/share/plymouth/themes`
-
-`ubiquity-slideshow` masuk ke `/usr/share/ubiquity-slideshow`
-
-`whisker/*.png` masuk ke `/usr/share/pixmaps/`
-
-`whisker/*.rc` masuk ke `/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
-
----
-
