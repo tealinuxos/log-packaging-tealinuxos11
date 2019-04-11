@@ -55,6 +55,7 @@ disk name : TealinuxOS 11 "Stevia" amd64
 1. selanjutnya replace `casper/initrd` pada iso dengan `initrd` yang disimpan pada `langkah 4`
 1. lalu buat project baru pada `cubic` dengan iso yang telah dimodif pada `langkah 7`
 1. generate iso, dan iso yang baru akan menggunakan plymouth dan kernel baru
+> langkah ini sedikit tricky jadi harap hati-hati
 
 ---------------------------
 ## Mulai Menghapus Aplikasi
