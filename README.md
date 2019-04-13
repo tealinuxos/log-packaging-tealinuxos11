@@ -125,32 +125,41 @@ $ ls | grep -v bootlogo | xargs rm
 - kemudian kembalikan bootlogo ke isolinux
 
 ### Menambahkan wallpaper
-* Copy asset wallpaper ke `/usr/share/tealinux/wallpaper` (kalau tidak ada buat dulu)
-* Ubah default wallpaper pada `/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
+* Copy asset wallpaper ke `<PROJECT-FOLDER>/squashfs-root/usr/share/tealinux/wallpaper` (kalau tidak ada buat dulu)
+* Ubah default wallpaper pada `<PROJECT-FOLDER>/squashfs-root/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
 * dari `<property name="image-path" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>`
 * menjadi `<property name="image-path" type="string" value="/usr/share/tealinux/wallpaper/defaults.jpg"/>`
 
 ### Menambahkan whisker (start menu icon)
-* `whisker/*.png` masuk ke `/usr/share/pixmaps/`
-* `whisker/*.rc` masuk ke `/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
+* `whisker/*.png` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
+* `whisker/*.rc` masuk ke `<PROJECT-FOLDER>/squashfs-root/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
 
 ### Menambahkan Custom Themes
 * `Themes` masuk ke `/usr/share/themes`
 
 ### Menambahkan plymouth (bootanimation)
-* `Plymouth` masuk ke `/usr/share/plymouth/themes`
-* edit `/usr/share/plymouth/themes/default.plymouth`
-* edit `/usr/share/plymouth/themes/text.plymouth`
+* `Plymouth` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes`
+* edit `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes/default.plymouth`
+* edit `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes/text.plymouth`
 * jika sudah mask ke `chroot` lalu `update-initramfs -u`
 * lalu lakukan [PACK-ULANG](https://github.com/catzy007/log-packaging-tealinuxos11#langkah-pack-setelah-update-kernel--ganti-plymouth)
 
+### Menambahkan Cursor
+* copy `cursors` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/icons/Tea-Cursor`
+* masuk ke `chroot` lalu
+```
+sudo update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Tea-Cursor/cursor.theme 65
+gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -fs /usr/share/icons/Tea-Cursor/cursor.theme /etc/alternatives/x-cursor-theme
+```
+* kemudian `nano /etc/alternatives/x-cursor-theme` ubah menjadi `Inherits=Tea-Cursor`
+
 ### Menambahkan background saat installasi
-* default ubiquity wallpaper config `/usr/bin/ubiquity-dm`
+* default ubiquity wallpaper config `<PROJECT-FOLDER>/squashfs-root/usr/bin/ubiquity-dm`
 
 -----------------------------------------------
 ## Menambahkan Asset Dokumentasi Tealinux
 ### Menambahkan ubiquity-slideshow (slideshow saat proses installasi)
-* `ubiquity-slideshow` masuk ke `/usr/share/ubiquity-slideshow`
+* `ubiquity-slideshow` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/ubiquity-slideshow`
 
 ------------------------------------------------------
 ## (OPTIONAL) Menambahkan patch untuk nvidia pci error
