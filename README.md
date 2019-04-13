@@ -142,7 +142,7 @@ $ ls | grep -v bootlogo | xargs rm
 * edit `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes/default.plymouth`
 * edit `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes/text.plymouth`
 * jika sudah mask ke `chroot` lalu `update-initramfs -u`
-* lalu lakukan [PACK-ULANG](https://github.com/catzy007/log-packaging-tealinuxos11#langkah-pack-setelah-update-kernel--ganti-plymouth)
+* lalu lakukan [PACK-ULANG](https://github.com/catzy007/log-packaging-tealinuxos11/blob/master/README.md#octocat-langkah-pack-setelah-update-kernel--ganti-plymouth)
 
 ### Menambahkan Cursor
 * copy `cursors` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/icons/Tea-Cursor`
