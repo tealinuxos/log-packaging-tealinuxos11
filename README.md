@@ -1,7 +1,7 @@
 # log-packaging-tealinuxos11
 
 -------------------------
-## Mencari tools remaster
+## :octocat: Mencari tools remaster
 referensi utama <https://help.ubuntu.com/community/LiveCDCustomization>
 
 * #### mencoba ubuntu customization kit (uck)
@@ -29,7 +29,7 @@ $ sudo apt install cubic
 > memilih cubic sebagai tools remaster tealinuxos 11
 
 --------------------------------
-## Langkah - Langkah remastering
+## :octocat: Langkah - Langkah remastering
 * buka cubic, masukkan password user
 * pilih project directory atau buat baru lalu next
 * pada "original iso", select, lalu pilih iso yang digunakan
@@ -45,7 +45,7 @@ disk name : TealinuxOS 11 "Stevia" amd64
 * lalu cubic akan generate squashfs, iso, md5 dll. bisa ditunggu
 * selesai, iso dapat ditest maupun di distribusikan
 
-## Langkah Pack (setelah update kernel & ganti plymouth)
+## :octocat: Langkah Pack (setelah update kernel & ganti plymouth)
 1. masuk `chroot`
 1. lihat kernel yang terinstall `ls /lib/modules/`
 1. buat ramdisk `mkinitramfs <KERNEL-AKTIF> -o /tmp/initrd`
@@ -58,7 +58,7 @@ disk name : TealinuxOS 11 "Stevia" amd64
 > langkah ini sedikit tricky jadi harap hati-hati
 
 ---------------------------
-## Mulai Menghapus Aplikasi
+## :octocat: Mulai Menghapus Aplikasi
 * pastikan list app yang dihapus telah diselesaikan oleh `software research`
 * masuk `chroot`
 * buka list app yang dihapus
@@ -74,7 +74,7 @@ $ sudo apt purge libreoffice -y
 * kalau sudah maka tinggal `sudo apt autoremove && sudo apt autoclean`
 
 -------------------------------------
-## Mulai Menginstall Aplikasi Default
+## :octocat: Mulai Menginstall Aplikasi Default
 * pastikan list app default telah diselesaikan oleh `software research`
 * masuk `chroot`
 * update dan upgrade dulu `sudo apt update && sudo apt upgrade -y`
@@ -89,7 +89,7 @@ $ sudo apt install vlc -y
 * kalau ada app yang tidak masuk apt, coba tanya `software research`
 
 ----------------------------------------------
-## Mulai Mengubah Isolinux, GRUB dan Disk info
+## :octocat: Mulai Mengubah Isolinux, GRUB dan Disk info
 ubah kata `xubuntu` menjadi `TealinuxOS 11` pada 
 
 * isolinux config file `<PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg`
@@ -97,7 +97,7 @@ ubah kata `xubuntu` menjadi `TealinuxOS 11` pada
 * disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
 
 -------------------------------------------
-## Mulai Menambahkan Asset Artwork Tealinux
+## :octocat: Mulai Menambahkan Asset Artwork Tealinux
 ### Menambahkan Splash Isolinux (gambar saat memilih mode installasi)
 - persiapkan `splash.png` tealinux dengan ukuran `640 x 480px` lalu buat `splash.pcx`
 ```
@@ -135,7 +135,7 @@ $ ls | grep -v bootlogo | xargs rm
 * `whisker/*.rc` masuk ke `<PROJECT-FOLDER>/squashfs-root/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
 
 ### Menambahkan Custom Themes
-* `Themes` masuk ke `/usr/share/themes`
+* `Themes` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/themes`
 
 ### Menambahkan plymouth (bootanimation)
 * `Plymouth` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes`
@@ -157,12 +157,12 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 * default ubiquity wallpaper config `<PROJECT-FOLDER>/squashfs-root/usr/bin/ubiquity-dm`
 
 -----------------------------------------------
-## Menambahkan Asset Dokumentasi Tealinux
+## :octocat: Menambahkan Asset Dokumentasi Tealinux
 ### Menambahkan ubiquity-slideshow (slideshow saat proses installasi)
 * `ubiquity-slideshow` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/ubiquity-slideshow`
 
 ------------------------------------------------------
-## (OPTIONAL) Menambahkan patch untuk nvidia pci error
+## :octocat: (OPTIONAL) Menambahkan patch untuk nvidia pci error
 patch ini berlaku untuk laptop intel core generasi 6,7 yang menggunakan vga diskrit nvidia. contoh laptop asus ROG, X550V, 15-ab549tx
 
 cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
