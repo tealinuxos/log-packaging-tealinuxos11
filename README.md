@@ -131,11 +131,10 @@ $ ls | grep -v bootlogo | xargs rm
 * menjadi `<property name="image-path" type="string" value="/usr/share/tealinux/wallpaper/defaults.jpg"/>`
 
 ### Menambahkan whisker (start menu icon)
-* `whisker/*.png` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
+* copy `tea-wisker.png` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
 * masuk `chroot`
-* edit confg `$ nano /etc/xdg/xdg-xubuntu/xfce4/whiskermenu/defaults.rc`
-* lalu ubah menjadi `button-icon=wisker-tea`
-
+* edit confg `nano /etc/xdg/xdg-xubuntu/xfce4/whiskermenu/defaults.rc`
+* lalu ubah menjadi `button-icon=tea-wisker`
 
 ### Menambahkan Custom Themes
 * `Themes` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/themes`
