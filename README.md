@@ -191,7 +191,7 @@ cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
 ```
 <PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg
 <PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg
-/etc/default/grub
+<PROJECT-FOLDER>/squashfs-root/etc/default/grub
 ```
 
 ---
