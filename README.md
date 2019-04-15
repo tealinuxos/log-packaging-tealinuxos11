@@ -132,7 +132,10 @@ $ ls | grep -v bootlogo | xargs rm
 
 ### Menambahkan whisker (start menu icon)
 * `whisker/*.png` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
-* `whisker/*.rc` masuk ke `<PROJECT-FOLDER>/squashfs-root/etc/xdg/xdg-xubuntu/xfce4/whiskermenu/`
+* masuk `chroot`
+* edit confg `$ nano /etc/xdg/xdg-xubuntu/xfce4/whiskermenu/defaults.rc`
+* lalu ubah menjadi `button-icon=wisker-tea`
+
 
 ### Menambahkan Custom Themes
 * `Themes` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/themes`
