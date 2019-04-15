@@ -130,6 +130,25 @@ $ ls | grep -v bootlogo | xargs rm
 * dari `<property name="image-path" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>`
 * menjadi `<property name="image-path" type="string" value="/usr/share/tealinux/wallpaper/defaults.jpg"/>`
 
+### Menambahkan Ubiquity background (bg saat installasi)
+* masuk `chroot`
+* edit config `nano /usr/bin/ubiquity-dm`
+* dari
+```
+for background in (
+                    '/usr/share/xfce4/backdrops/xubuntu-wallpaper.png',
+```
+* menjadi
+```
+for background in (
+                    '/usr/share/tealinux/wallpaper/defaults.jpg',
+```
+
+### Menambahkan lightdm-greeter background (bg saat login)
+* masuk `chroot`
+* lalu edit config `nano /etc/lightdm/lightdm-gtk-greeter.conf`
+* ubah menjadi `background=/usr/share/tealinux/wallpaper/defaults.jpg`
+
 ### Menambahkan whisker (start menu icon)
 * copy `tea-wisker.png` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
 * masuk `chroot`
@@ -155,8 +174,9 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 ```
 * kemudian `nano /etc/alternatives/x-cursor-theme` ubah menjadi `Inherits=Tea-Cursor`
 
-### Menambahkan background saat installasi
-* default ubiquity wallpaper config `<PROJECT-FOLDER>/squashfs-root/usr/bin/ubiquity-dm`
+### Menambahkan Ubiquity Icon (icon saat installasi)
+* persiapkan `cd_in_tray.png` dan `ubuntu_installed.png`
+* replace `cd_in_tray.png` dan `ubuntu_installed.png` pada `<PROJECT-FOLDER>squashfs-root/usr/share/ubiquity/pixmaps/`
 
 -----------------------------------------------
 ## :octocat: Menambahkan Asset Dokumentasi Tealinux
