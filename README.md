@@ -181,7 +181,11 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 -----------------------------------------------
 ## :octocat: Menambahkan Asset Dokumentasi Tealinux
 ### Menambahkan ubiquity-slideshow (slideshow saat proses installasi)
-* `ubiquity-slideshow` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/ubiquity-slideshow`
+* persiapkan `ubiquity-slideshow` tealinuxOS. isinya `slideshow.conf` dan folder `slides` (kalau tidak ada buat dulu)
+* copy `slideshow.conf` dan folder `slides` 
+* masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/ubiquity-slideshow`
+* hapus `slideshow.conf` dan folder `slides` lama
+* paste `slideshow.conf` dan folder `slides` 
 
 ------------------------------------------------------
 ## :octocat: (OPTIONAL) Menambahkan patch untuk nvidia pci error
