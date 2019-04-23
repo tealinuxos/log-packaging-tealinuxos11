@@ -166,7 +166,7 @@ for background in (
 * lalu lakukan [PACK-ULANG](https://github.com/catzy007/log-packaging-tealinuxos11#octocat-langkah-pack-setelah-update-kernel--ganti-plymouth)
 
 ### Menambahkan Cursor
-* copy `cursors` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/icons/Tea-Cursor`
+* copy `Tea-Cursor` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/icons/`
 * masuk ke `chroot` lalu
 ```
 sudo update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Tea-Cursor/cursor.theme 65
