@@ -190,10 +190,9 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 ## :octocat: Menambahkan Asset Dokumentasi Tealinux
 ### Menambahkan ubiquity-slideshow (slideshow saat proses installasi)
 * persiapkan `ubiquity-slideshow` tealinuxOS. isinya `slideshow.conf` dan folder `slides` (kalau tidak ada buat dulu)
-* copy `slideshow.conf` dan folder `slides` 
 * masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/ubiquity-slideshow`
-* hapus `slideshow.conf` dan folder `slides` lama
-* paste `slideshow.conf` dan folder `slides` 
+* hapus `slideshow.conf` dan folder `slides` yang lama
+* copy `slideshow.conf` dan folder `slides` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/ubiquity-slideshow`
 
 ------------------------------------------
 ## :octocat: Menambahkan Keyboard Shortcut
