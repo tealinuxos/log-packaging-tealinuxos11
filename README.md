@@ -182,7 +182,9 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 * buka cubic lalu masuk ke `chroot`
 * tambah ppa [papirus icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) `sudo add-apt-repository ppa:papirus/papirus`
 * lalu install `sudo apt-get install papirus-icon-theme`
-* lalu set agar menjadi default `xfconf-query -c xsettings -p /Net/IconThemeName -s Papirus`
+* lalu set config agar menjadi default `nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml`
+* dari `<property name="IconThemeName" type="string" value="elementary-xfce-darker"/>`
+* menjadi `<property name="IconThemeName" type="string" value="Papirus"/>`
 
 ---------------------------------------------------
 ## :octocat: Menambahkan Asset Dokumentasi Tealinux
