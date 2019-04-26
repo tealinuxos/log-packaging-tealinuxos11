@@ -178,6 +178,12 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 * persiapkan `cd_in_tray.png` dan `ubuntu_installed.png`
 * replace `cd_in_tray.png` dan `ubuntu_installed.png` pada `<PROJECT-FOLDER>squashfs-root/usr/share/ubiquity/pixmaps/`
 
+### Menambahkan Icon ~~Default~~ TealinuxOS
+* buka cubic lalu masuk ke `chroot`
+* tambah ppa [papirus icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) `sudo add-apt-repository ppa:papirus/papirus`
+* lalu install `sudo apt-get install papirus-icon-theme`
+* lalu set agar menjadi default `xfconf-query -c xsettings -p /Net/IconThemeName -s Papirus`
+
 ---------------------------------------------------
 ## :octocat: Menambahkan Asset Dokumentasi Tealinux
 ### Menambahkan ubiquity-slideshow (slideshow saat proses installasi)
