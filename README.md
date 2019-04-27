@@ -155,8 +155,15 @@ for background in (
 * edit confg `nano /etc/xdg/xdg-xubuntu/xfce4/whiskermenu/defaults.rc`
 * lalu ubah menjadi `button-icon=tea-wisker`
 
-### Menambahkan Custom Themes
+### Menambahkan Tema
 * `Themes` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/themes`
+* masuk chroot
+* edit config pertama `nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml`
+* *dari `<property name="theme" type="string" value="Greybird"/>`*
+* *menjadi `<property name="theme" type="string" value="Tea-Dark"/>`*
+* lalu edit config kedua `nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml`
+* *dari `<property name="ThemeName" type="string" value="Greybird"/>`*
+* *menjadi `<property name="ThemeName" type="string" value="Tea-Dark"/>`*
 
 ### Menambahkan plymouth (bootanimation)
 * `Plymouth` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes`
