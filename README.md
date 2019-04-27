@@ -198,6 +198,10 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 ## :octocat: Menambahkan Keyboard Shortcut
 `nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml`
 
+-------
+## :octocat: Menambahkan default filetypes
+` nano /usr/share/applications/defaults.list`
+
 ----------------------------------------------------------------
 ## :octocat: (OPTIONAL) Menambahkan patch untuk nvidia pci error
 patch ini berlaku untuk laptop intel core generasi 6,7 yang menggunakan vga diskrit nvidia. contoh laptop asus ROG, X550V, 15-ab549tx
