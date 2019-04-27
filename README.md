@@ -198,9 +198,13 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 ## :octocat: Menambahkan Keyboard Shortcut
 `nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml`
 
--------
+------------------------------------------
 ## :octocat: Menambahkan default filetypes
 ` nano /usr/share/applications/defaults.list`
+
+---------------------------
+## :octocat: Merombak panel
+` nano /etc/xdg/xdg-xubuntu/xfce4/panel/default.xml`
 
 ----------------------------------------------------------------
 ## :octocat: (OPTIONAL) Menambahkan patch untuk nvidia pci error
