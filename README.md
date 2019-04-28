@@ -187,13 +187,17 @@ for background in (
 * lalu lakukan [PACK-ULANG](https://github.com/catzy007/log-packaging-tealinuxos11#octocat-langkah-pack-setelah-update-kernel--ganti-plymouth)
 
 ### Menambahkan Cursor
-* copy `Tea-Cursor-Light` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/icons/`
+* copy `Tea-Cursor-Light` dan `Tea-Cursor-Dark` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/icons/`
 * masuk ke `chroot` lalu
+* install cursor
 ```
 sudo update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Tea-Cursor-Light/cursor.theme 65
-gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor-Light" & sudo ln -fs /usr/share/icons/Tea-Cursor-Light/cursor.theme /etc/alternatives/x-cursor-theme
+sudo update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Tea-Cursor-Dark/cursor.theme 65
 ```
-* lakukan pula pada `Tea-Cursor-Dark`
+* set cursor menjadi default (disini dark yang jadi default)
+```
+gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor-Dark" & sudo ln -fs /usr/share/icons/Tea-Cursor-Dark/cursor.theme /etc/alternatives/x-cursor-theme
+```
 * kemudian `nano /etc/alternatives/x-cursor-theme` ubah menjadi `Inherits=Tea-Cursor-Light`
 
 ### Menambahkan Ubiquity Icon (icon saat installasi)
