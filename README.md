@@ -213,11 +213,11 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 ## :octocat: Merombak panel
 `nano /etc/xdg/xdg-xubuntu/xfce4/panel/default.xml`
 ```
- <property name="plugin-18" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15564338402.desktop"/>
-      </property>
-    </property>
+<property name="plugin-18" type="string" value="launcher">
+  <property name="items" type="array">
+    <value type="string" value="15564338402.desktop"/>
+  </property>
+</property>
 ```
 
 ---------------------------
