@@ -213,15 +213,19 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 ## :octocat: Merombak panel
 `nano /etc/xdg/xdg-xubuntu/xfce4/panel/default.xml`
 ```
+    <value type="int" value="12"/>
+```
+```
     <property name="plugin-12" type="string" value="windowmenu"/>
 ```
 
 ---------------------------
 ## :octocat: Theme-Switcher
+* copy `theme-switcher.desktop` ke `<PROJECT-FOLDER>/squashfs-root//etc/xdg/autostart`
+* copy `theme-switcher.sh` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/tealinux/ThemeSwitcher/` (kalau tidak ada buat dulu)
 * masuk `chroot`
 * install yad `sudo apt install yad`
-* copy `theme-switcher.desktop` ke `/etc/xdg/autostart`
-* copy `theme-switcher.sh` ke `/usr/share/tealinux/ThemeSwitcher/` (kalau tidak ada buat dulu)
+* add permission `chmod +x /usr/share/tealinux/ThemeSwitcher/theme-switcher.sh`
 
 ----------------------------------------------------------------
 ## :octocat: (OPTIONAL) Menambahkan patch untuk nvidia pci error
