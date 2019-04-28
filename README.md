@@ -66,7 +66,21 @@ disk name : TealinuxOS 11 "Stevia" amd64
 
 ```
 $ sudo dpkg -l | grep libreoffice
-$ sudo apt purge libreoffice -y
+```
+maka akan muncul seperti
+```
+ii  libreoffice                                 1:6.0.7-0ubuntu0.18.04.5                   amd64        office productivity suite (metapackage)
+ii  libreoffice-avmedia-backend-gstreamer       1:6.0.7-0ubuntu0.18.04.5                   amd64        GStreamer backend for LibreOffice
+ii  libreoffice-base                            1:6.0.7-0ubuntu0.18.04.5                   amd64        office productivity suite -- database
+ii  libreoffice-base-core                       1:6.0.7-0ubuntu0.18.04.5                   amd64        office productivity suite -- shared library
+ii  libreoffice-base-drivers                    1:6.0.7-0ubuntu0.18.04.5                   amd64        Database connectivity drivers for LibreOffice
+ii  libreoffice-calc                            1:6.0.7-0ubuntu0.18.04.5                   amd64        office productivity suite -- spreadsheet
+ii  libreoffice-common                          1:6.0.7-0ubuntu0.18.04.5                   all          office productivity suite
+... masih banyak lagi
+```
+kemudian hapus satu persatu dari daftar 
+```
+$ sudo apt remove libreoffice libreoffice-avmedia-backend-gstreamer libreoffice-base libreoffice-base-core libreoffice-base-drivers libreoffice-calc libreoffice-common -y
 ```
 
 * kalau belum bersih tinggal `purge` app yang ada pada `dpkg -l | grep libreoffice`
@@ -86,7 +100,7 @@ $ sudo apt update
 $ sudo apt install vlc -y
 ```
 * selesaikan list app default
-* kalau ada app yang tidak masuk apt, coba tanya `software research`
+* kalau ada app yang tidak masuk apt atau ada yang error, coba tanya `software research`
 
 --------------------------------------------------------
 ## :octocat: Mulai Mengubah Isolinux, GRUB dan Disk info
@@ -150,10 +164,10 @@ for background in (
 * ubah menjadi `background=/usr/share/tealinux/wallpaper/defaults.jpg`
 
 ### Menambahkan whisker (start menu icon)
-* copy `tea-wisker.png` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
+* copy `wisker-tea.png` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
 * masuk `chroot`
 * edit confg `nano /etc/xdg/xdg-xubuntu/xfce4/whiskermenu/defaults.rc`
-* lalu ubah menjadi `button-icon=tea-wisker`
+* lalu ubah menjadi `button-icon=wisker-tea`
 
 ### Menambahkan Tema
 * `Themes` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/themes`
@@ -173,13 +187,14 @@ for background in (
 * lalu lakukan [PACK-ULANG](https://github.com/catzy007/log-packaging-tealinuxos11#octocat-langkah-pack-setelah-update-kernel--ganti-plymouth)
 
 ### Menambahkan Cursor
-* copy `Tea-Cursor` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/icons/`
+* copy `Tea-Cursor-Light` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/icons/`
 * masuk ke `chroot` lalu
 ```
-sudo update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Tea-Cursor/cursor.theme 65
-gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -fs /usr/share/icons/Tea-Cursor/cursor.theme /etc/alternatives/x-cursor-theme
+sudo update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Tea-Cursor-Light/cursor.theme 65
+gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor-Light" & sudo ln -fs /usr/share/icons/Tea-Cursor-Light/cursor.theme /etc/alternatives/x-cursor-theme
 ```
-* kemudian `nano /etc/alternatives/x-cursor-theme` ubah menjadi `Inherits=Tea-Cursor`
+* lakukan pula pada `Tea-Cursor-Dark`
+* kemudian `nano /etc/alternatives/x-cursor-theme` ubah menjadi `Inherits=Tea-Cursor-Light`
 
 ### Menambahkan Ubiquity Icon (icon saat installasi)
 * persiapkan `cd_in_tray.png` dan `ubuntu_installed.png`
@@ -210,9 +225,9 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 `nano /usr/share/applications/defaults.list`
 
 ---------------------------
-## :octocat: Merombak panel
-`nano /etc/xdg/xdg-xubuntu/xfce4/panel/default.xml`
-* menambahkan workspaces
+## :octocat: Menambahkan item panel
+### menambahkan workspaces
+* edit `<PROJECT-FOLDER>/squashfs-root/etc/xdg/xdg-xubuntu/xfce4/panel/default.xml`
 ```
     <value type="int" value="12"/>
 ```
@@ -223,8 +238,8 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 * set config `xfconf-query -c xfwm4 -p /general/workspace_count -s 2`
 
 ---------------------------
-## :octocat: Theme-Switcher
-* copy `theme-switcher.desktop` ke `<PROJECT-FOLDER>/squashfs-root//etc/xdg/autostart`
+## :octocat: Menambahkan Theme-Switcher
+* copy `theme-switcher.desktop` ke `<PROJECT-FOLDER>/squashfs-root/etc/xdg/autostart`
 * copy `theme-switcher.sh` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/tealinux/ThemeSwitcher/` (kalau tidak ada buat dulu)
 * masuk `chroot`
 * install yad `sudo apt install yad`
