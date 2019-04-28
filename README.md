@@ -215,10 +215,17 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 
 ---------------------------
 ## :octocat: Theme-Switcher
+* Light Mode
+```
+xfconf-query -c xsettings -p /Net/ThemeName -s Tea-Light
+xfconf-query -c xfwm4 -p /general/theme -s Tea-Light
+xfconf-query -c xsettings -p /Gtk/CursorThemeName -s Tea-Cursor-Dark
+```
+* Dark Mode
 ```
 xfconf-query -c xsettings -p /Net/ThemeName -s Tea-Dark
-xfconf-query -c xfwm4 -p /general/theme -s Tea-Light
-
+xfconf-query -c xfwm4 -p /general/theme -s Tea-Dark
+xfconf-query -c xsettings -p /Gtk/CursorThemeName -s Tea-Cursor-Light
 ```
 
 ----------------------------------------------------------------
