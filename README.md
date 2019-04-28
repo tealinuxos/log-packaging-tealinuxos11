@@ -212,12 +212,15 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 ---------------------------
 ## :octocat: Merombak panel
 `nano /etc/xdg/xdg-xubuntu/xfce4/panel/default.xml`
+* menambahkan workspaces
 ```
     <value type="int" value="12"/>
 ```
 ```
     <property name="plugin-12" type="string" value="windowmenu"/>
 ```
+* masuk `chroot`
+* set config `xfconf-query -c xfwm4 -p /general/workspace_count -s 2`
 
 ---------------------------
 ## :octocat: Theme-Switcher
