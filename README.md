@@ -207,11 +207,19 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor" & sudo ln -f
 
 ------------------------------------------
 ## :octocat: Menambahkan default filetypes
-` nano /usr/share/applications/defaults.list`
+`nano /usr/share/applications/defaults.list`
 
 ---------------------------
 ## :octocat: Merombak panel
-` nano /etc/xdg/xdg-xubuntu/xfce4/panel/default.xml`
+`nano /etc/xdg/xdg-xubuntu/xfce4/panel/default.xml`
+
+---------------------------
+## :octocat: Theme-Switcher
+```
+xfconf-query -c xsettings -p /Net/ThemeName -s Tea-Dark
+xfconf-query -c xfwm4 -p /general/theme -s Tea-Light
+
+```
 
 ----------------------------------------------------------------
 ## :octocat: (OPTIONAL) Menambahkan patch untuk nvidia pci error
