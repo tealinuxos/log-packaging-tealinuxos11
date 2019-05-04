@@ -183,6 +183,7 @@ for background in (
 * `Plymouth` masuk ke `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes`
 * edit `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes/default.plymouth`
 * edit `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes/text.plymouth`
+* `update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/`**nama-tema**`/`**nama-tema**`.plymouth 200`
 * jika sudah mask ke `chroot` lalu `update-initramfs -u`
 * lalu lakukan [PACK-ULANG](https://github.com/catzy007/log-packaging-tealinuxos11#octocat-langkah-pack-setelah-update-kernel--ganti-plymouth)
 
