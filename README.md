@@ -180,36 +180,20 @@ for background in (
 * *menjadi `<property name="ThemeName" type="string" value="Tea-Dark"/>`*
 
 ### Menambahkan plymouth (bootanimation)
-* copy plymouth `stevia-tea` yang berisi `gambar plmouth, stevia-tea.script, dan stevia-tea.plymouth` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes`
-* edit `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes/default.plymouth` menjadi
-```
-[Plymouth Theme]
-Name=Stevia Tea
-Description=TeaLinuxOS XI Stevia
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/stevia-tea
-ScriptFile=/usr/share/plymouth/themes/stevia-tea/stevia-tea.script
-```
-* edit `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes/text.plymouth` menjadi
-```
-[Plymouth Theme]
-Name=tealinux Text
-Description=Text mode theme based on xubuntu-logo theme
-ModuleName=ubuntu-text
-
-[ubuntu-text]
-title=TealinuxOS 11 - Stevia
-black=0x000000
-white=0xffffff
-brown=0x000000
-blue=0xffffff
-```
+* copy plymouth folder `stevia-tea` yang berisi `gambar plmouth, stevia-tea.script, stevia-text.plymouth, dan stevia-tea.plymouth` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes`
 * lalu masuk ke `chroot`
-* kemudian install plymouth `update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/`**stevia-tea**`/`**stevia-tea**`.plymouth 200`
-* selanjutnya buat plymouth menjadi default `update-alternatives --config default.plymouth` pilih `stevia-tea`
+* kemudian install plymouth 
+```
+update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/stevia-tea/stevia-tea.plymouth 200
+update-alternatives --install /usr/share/plymouth/themes/text.plymouth text.plymouth /usr/share/plymouth/themes/stevia-tea/stevia-text.plymouth 200
+```
+* selanjutnya buat plymouth menjadi default 
+```
+update-alternatives --config default.plymouth #pilih stevia-tea
+update-alternatives --config text.plymouth #pilih stevia-text
+```
 * kemudian update initrams `update-initramfs -u`
+* *kalau ada installer tinggal copy folder plymouth `stevia-tea` ke `<PROJECT-FOLDER>/squashfs-root/tmp` lalu masuk ke `chroot` kemudian `cd /tmp/stevia-tea` lalu ikuti langkah2 pada installer*
 * lalu lakukan [PACK-ULANG](https://github.com/catzy007/log-packaging-tealinuxos11#octocat-langkah-pack-setelah-update-kernel--ganti-plymouth)
 
 ### Menambahkan Cursor
