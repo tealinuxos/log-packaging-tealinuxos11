@@ -110,6 +110,11 @@ ubah kata `xubuntu` menjadi `TealinuxOS 11` pada
 * grub config file `<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg`
 * disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
 
+ubah pula `GRUB_DISTRIBUTOR` pada `/etc/default/grub`
+* `sudo nano /etc/default/grub`
+* ubah `` GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian` ``
+* menjadi `GRUB_DISTRIBUTOR="TealinuxOS 11 Stevia"`
+
 -----------------------------------------------------
 ## :octocat: Mulai Menambahkan Asset Artwork Tealinux
 ### Menambahkan Splash Isolinux (gambar saat memilih mode installasi)
