@@ -275,4 +275,9 @@ cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
 <PROJECT-FOLDER>/squashfs-root/etc/default/grub
 ```
 
+## disable zoom
+* chroot
+* nano xfwm4.xml
+`    <property name="zoom_desktop" type="bool" value="false"/>`
+
 ---
