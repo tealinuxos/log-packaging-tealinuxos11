@@ -168,6 +168,15 @@ for background in (
 * lalu edit config `nano /etc/lightdm/lightdm-gtk-greeter.conf`
 * ubah menjadi `background=/usr/share/tealinux/wallpaper/defaults.jpg`
 
+### Mengedit lightdm-greeter themes
+* masuk `chroot`
+* lalu edit config `nano /etc/lightdm/lightdm-gtk-greeter.conf`
+* tambahkan
+```
+  theme-name = Tea-Light
+  icon-theme-name = Papirus-Dark
+```
+
 ### Menambahkan whisker (start menu icon)
 * copy `wisker-tea.png` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
 * masuk `chroot`
