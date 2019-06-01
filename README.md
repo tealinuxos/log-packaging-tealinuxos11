@@ -110,10 +110,29 @@ ubah kata `xubuntu` menjadi `TealinuxOS 11` pada
 * grub config file `<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg`
 * disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
 
-ubah pula `GRUB_DISTRIBUTOR` pada `/etc/default/grub`
+[OPTIONAL] Ubah pula `GRUB_DISTRIBUTOR` pada `/etc/default/grub`
 * `sudo nano /etc/default/grub`
 * ubah `` GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian` ``
 * menjadi `GRUB_DISTRIBUTOR="TealinuxOS 11 Stevia"`
+
+---------------------------------------
+## :octocat: Mulai Mengubah lsb-release
+* masuk `chroot`
+* edit config `sudo nano /etc/lsb-release`
+* ubah dari 
+```
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.2 LTS"` 
+```
+* menjadi 
+```
+DISTRIB_ID=TealinuxOS
+DISTRIB_RELEASE=11   
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="TealinuxOS 11 Stevia"
+```
 
 -----------------------------------------------------
 ## :octocat: Mulai Menambahkan Asset Artwork Tealinux
