@@ -424,7 +424,7 @@ contoh
 * tambahkan pada bagian bawah
 ```
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0,850000
+BackgroundDarkness=0.850000
 ```
 
 ----------------------------------------------------------------
