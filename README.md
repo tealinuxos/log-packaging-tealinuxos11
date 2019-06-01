@@ -110,11 +110,6 @@ ubah kata `xubuntu` menjadi `TealinuxOS 11` pada
 * grub config file `<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg`
 * disk info `<PROJECT-FOLDER>/custom-live-iso/.disk/info`
 
-[OPTIONAL] Ubah pula `GRUB_DISTRIBUTOR` pada `/etc/default/grub`
-* `sudo nano /etc/default/grub`
-* ubah `` GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian` ``
-* menjadi `GRUB_DISTRIBUTOR="TealinuxOS 11 Stevia"`
-
 ---------------------------------------
 ## :octocat: Mulai Mengubah lsb-release
 * masuk `chroot`
@@ -247,7 +242,7 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor-Dark" & sudo 
 * persiapkan `cd_in_tray.png` dan `ubuntu_installed.png`
 * replace `cd_in_tray.png` dan `ubuntu_installed.png` pada `<PROJECT-FOLDER>squashfs-root/usr/share/ubiquity/pixmaps/`
 
-### Menambahkan Icon ~~Default~~ TealinuxOS
+### Menambahkan Icon Default TealinuxOS 11
 * buka cubic lalu masuk ke `chroot`
 * tambah ppa [papirus icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) `sudo add-apt-repository ppa:papirus/papirus`
 * lalu install `sudo apt-get install papirus-icon-theme`
@@ -392,7 +387,7 @@ contoh
 * masuk `chroot`
 * set config `xfconf-query -c xfwm4 -p /general/workspace_count -s 2`
 
----------------------------
+---------------------------------------
 ## :octocat: Menambahkan Theme-Switcher
 * copy `theme-switcher.desktop` ke `<PROJECT-FOLDER>/squashfs-root/etc/xdg/autostart`
 * copy `theme-switcher.sh` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/tealinux/ThemeSwitcher/` (kalau tidak ada buat dulu)
@@ -402,9 +397,35 @@ contoh
 
 --------------------------------------------
 ## :octocat: Disable Zoom (alt + mousewheel)
-* chroot
-* nano xfwm4.xml
-`    <property name="zoom_desktop" type="bool" value="false"/>`
+* masuk ke `chroot`
+* edit config `nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml`
+* ubah dari 
+```
+    <property name="wrap_resistance" type="int" value="10"/>
+    <property name="wrap_windows" type="bool" value="true"/>
+    <property name="wrap_workspaces" type="bool" value="false"/>
+  </property>
+</channel>
+```
+* menjadi
+```
+    <property name="wrap_resistance" type="int" value="10"/>
+    <property name="wrap_windows" type="bool" value="true"/>
+    <property name="wrap_workspaces" type="bool" value="false"/>
+    <property name="zoom_desktop" type="bool" value="false"/>
+  </property>
+</channel>
+```
+
+---------------------------------------
+## :octocat: Mengedit Terminal Emulator
+* masuk ke `chroot`
+* edit config `sudo nano /etc/xdg/xdg-xubuntu/xfce4/terminal/terminalrc`
+* tambahkan pada bagian bawah
+```
+BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+BackgroundDarkness=0,850000
+```
 
 ----------------------------------------------------------------
 ## :octocat: (OPTIONAL) Menambahkan patch untuk nvidia pci error
