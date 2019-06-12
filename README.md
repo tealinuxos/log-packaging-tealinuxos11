@@ -128,6 +128,8 @@ DISTRIB_RELEASE=11
 DISTRIB_CODENAME=bionic
 DISTRIB_DESCRIPTION="TealinuxOS 11 Stevia"
 ```
+* kemudian `cd /usr/share/python-apt/templates/`
+* lalu `sudo ln -s Ubuntu.info TealinuxOS.info`
 
 -----------------------------------------------------
 ## :octocat: Mulai Menambahkan Asset Artwork Tealinux
