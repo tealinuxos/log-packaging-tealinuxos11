@@ -443,7 +443,16 @@ cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
 
 -------------------------------------------------------------
 ## :octocat: (OPTIONAL) Jika ada error di installasi GRUB EFI
-patch ini berlaku untuk laptop yang menggunakan UEFI terutama pada AMD
+##### Patch ini berlaku untuk laptop yang menggunakan UEFI. Penyebab error
+```
+Broken grub-efi-amd64-signed:amd64 Depends on grub-efi-amd64
+Considering grub-efi-amd64:amd64 1 as a solution to grub-efi-amd64-signed:amd64
+grub-efi-amd64-signed : Depends: grub-efi-amd64 (= 2.02~beta2-36ubuntu3.7) but it is not going \
+ to be installed
+Investigating () shim-signed
+Broken shim-signed:amd64 Depends on grub-efi-amd64-bin
+```
+#### Cara Mengatasi
 * masuk chroot
 * lalu
 ```
