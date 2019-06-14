@@ -441,4 +441,14 @@ cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
 <PROJECT-FOLDER>/squashfs-root/etc/default/grub
 ```
 
+-------------------------------------------------------------
+## :octocat: (OPTIONAL) Jika ada error di installasi GRUB EFI
+patch ini berlaku untuk laptop yang menggunakan UEFI terutama pada AMD
+* masuk chroot
+* lalu
+```
+sudo apt update
+sudo apt install grub-efi-amd64-signed 
+```
+
 ---
