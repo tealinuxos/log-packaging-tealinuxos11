@@ -478,6 +478,7 @@ Type=Application
 DesktopNames=XFCE
 ```
 
-
+## Install LaporHama
+`sudo apt -y install libgconf2-4`
 
 ---
