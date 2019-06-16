@@ -460,9 +460,24 @@ sudo apt update
 sudo apt install grub-efi-amd64-signed 
 ```
 
-## ICON
-/usr/share/icons/hicolor/scalable/places
-/usr/share/xsessions
-sudo gtk-update-icon-cache /usr/share/icons/hicolor
+## Menambahkan lightm session select icon
+* Persiapkan icon `svg` dengan ukuran `16 x 16px`
+* copy icon ke `<PROJECT FOLDER>/squashfs-root/usr/share/icons/hicolor/scalable/places/`
+* lalu masuk ke `chroot`
+* lakukan `sudo gtk-update-icon-cache /usr/share/icons/hicolor`
+* lalu `cd /usr/share/xsessions`
+* kemudian `nano tealinuxos.desktop` dan isikan 
+```
+[Desktop Entry]
+Version=1.0
+Name=TealinuxOS Session
+Comment=Use this session to run TealinuxOS as your desktop environment
+Exec=startxfce4
+Icon=
+Type=Application
+DesktopNames=XFCE
+```
+
+
 
 ---
