@@ -441,8 +441,8 @@ cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
 <PROJECT-FOLDER>/squashfs-root/etc/default/grub
 ```
 
--------------------------------------------------------------
-## :octocat: (OPTIONAL) Jika ada error di installasi GRUB EFI
+--------------------------------------------------------------
+## :octocat: (NOT-FIXED) Jika ada error di installasi GRUB EFI
 ##### Patch ini berlaku untuk laptop yang menggunakan UEFI. Penyebab error
 ```
 Broken grub-efi-amd64-signed:amd64 Depends on grub-efi-amd64
@@ -459,5 +459,10 @@ Broken shim-signed:amd64 Depends on grub-efi-amd64-bin
 sudo apt update
 sudo apt install grub-efi-amd64-signed 
 ```
+
+## ICON
+/usr/share/icons/hicolor/scalable/places
+/usr/share/xsessions
+sudo gtk-update-icon-cache /usr/share/icons/hicolor
 
 ---
