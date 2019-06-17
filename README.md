@@ -189,8 +189,8 @@ for background in (
 * lalu edit config `nano /etc/lightdm/lightdm-gtk-greeter.conf`
 * tambahkan
 ```
-  theme-name = Tea-Light
-  icon-theme-name = Papirus-Dark
+  theme-name=Tea-Semi
+  icon-theme-name=Papirus-Dark
 ```
 
 ### Menambahkan whisker (start menu icon)
