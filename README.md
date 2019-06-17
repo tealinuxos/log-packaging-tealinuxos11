@@ -460,7 +460,7 @@ sudo apt update
 sudo apt install grub-efi-amd64-signed 
 ```
 
-## Menambahkan lightm session select icon
+## Menambahkan lighdtm session select icon
 * Persiapkan icon `svg` dengan ukuran `16 x 16px`
 * copy icon ke `<PROJECT FOLDER>/squashfs-root/usr/share/icons/hicolor/scalable/places/`
 * lalu masuk ke `chroot`
