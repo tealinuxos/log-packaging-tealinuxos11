@@ -484,6 +484,62 @@ DesktopNames=XFCE
 
 ----
 ## Setting Favorites Menu
-`nano /etc/xdg/xdg-xubuntu/menus/xfce-applications.menu`
+* masuk `chroot`
+* lalu `nano /etc/xdg/xdg-xubuntu/menus/xfce-applications.menu`
+* cari
+```
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+  "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+    <Name>Xfce</Name>
+
+    <DefaultAppDirs/>
+    <DefaultDirectoryDirs/>
+
+    <Include>
+        <Filename>exo-web-browser.desktop</Filename>
+        <Filename>exo-mail-reader.desktop</Filename>
+        <Filename>xfce-settings-manager.desktop</Filename>
+        <Filename>org.gnome.Software.desktop</Filename>
+        <Filename>xfhelp4.desktop</Filename>
+        <Filename>xubuntu-website.desktop</Filename>
+        <Filename>xubuntu-contribute.desktop</Filename>
+        <Filename>xfce4-about.desktop</Filename>
+        <Filename>xfce4-session-logout.desktop</Filename>
+    </Include>
+    .
+    .
+    .
+```
+* ubah menjadi
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+  "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+    <Name>Xfce</Name>
+
+    <DefaultAppDirs/>
+    <DefaultDirectoryDirs/>
+
+    <Include>
+        <Filename>exo-web-browser.desktop</Filename>
+        <Filename>exo-mail-reader.desktop</Filename>
+        <Filename>xfce-settings-manager.desktop</Filename>
+        <Filename>org.gnome.Software.desktop</Filename>
+        <Filename>xfhelp4.desktop</Filename>
+        <Filename>xubuntu-website.desktop</Filename>
+        <Filename>xubuntu-contribute.desktop</Filename>
+        <Filename>xfce4-about.desktop</Filename>
+        <Filename>xfce4-session-logout.desktop</Filename>
+        <Filename>tea-installer-gtk.desktop</Filename>
+        <Filename>tea-maker-gtk.desktop</Filename>
+        <Filename>LaporHama.desktop</Filename>
+        <Filename>dynamic-wallpaper.desktop</Filename>
+    </Include>
+    .
+    .
+    .
+```
 
 ---
