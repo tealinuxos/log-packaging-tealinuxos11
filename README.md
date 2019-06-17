@@ -478,7 +478,12 @@ Type=Application
 DesktopNames=XFCE
 ```
 
+--------------------
 ## Install LaporHama
 `sudo apt -y install libgconf2-4`
+
+----
+## Setting Favorites Menu
+`nano /etc/xdg/xdg-xubuntu/menus/xfce-applications.menu`
 
 ---
