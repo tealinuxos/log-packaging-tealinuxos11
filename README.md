@@ -428,39 +428,21 @@ contoh
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.850000
 ```
-
-----------------------------------------------------------------
-## :octocat: (OPTIONAL) Menambahkan patch untuk nvidia pci error
-patch ini berlaku untuk laptop intel core generasi 6,7 yang menggunakan vga diskrit nvidia.
-> contoh laptop asus ROG, X550V, 15-ab549tx
-
-cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
+-----------------------------------------
+## :octocat: Setting Start Menu Favorites
+* masuk `chroot`
+* lalu `nano /etc/xdg/xdg-xubuntu/xfce4/whiskermenu/defaults.rc`
+* cari
 ```
-<PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg
-<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg
-<PROJECT-FOLDER>/squashfs-root/etc/default/grub
+favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,libreoffice-writer.desktop,libreoffice-calc.desktop,pidgin.desktop,org.gnome.Software.desktop,exo-terminal-emulator.desktop,xfhelp4.desktop
 ```
-
---------------------------------------------------------------
-## :octocat: (NOT-FIXED) Jika ada error di installasi GRUB EFI
-##### Patch ini berlaku untuk laptop yang menggunakan UEFI. Penyebab error
+* ubah menjadi
 ```
-Broken grub-efi-amd64-signed:amd64 Depends on grub-efi-amd64
-Considering grub-efi-amd64:amd64 1 as a solution to grub-efi-amd64-signed:amd64
-grub-efi-amd64-signed : Depends: grub-efi-amd64 (= 2.02~beta2-36ubuntu3.7) but it is not going \
- to be installed
-Investigating () shim-signed
-Broken shim-signed:amd64 Depends on grub-efi-amd64-bin
-```
-#### Cara Mengatasi
-* masuk chroot
-* lalu
-```
-sudo apt update
-sudo apt install grub-efi-amd64-signed 
+favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,libreoffice-writer.desktop,libreoffice-calc.desktop,pidgin.desktop,org.gnome.Software.desktop,exo-terminal-emulator.desktop,xfhelp4.desktop,tea-installer-gtk.desktop,tea-maker-gtk.desktop,LaporHama.desktop,dynamic-wallpaper.desktop,modularitea.desktop,about-tealinuxos.desktop
 ```
 
-## Menambahkan lighdtm session select icon
+----------------------------------------------------
+## :octocat: Menambahkan lighdtm session select icon
 * Persiapkan icon `svg` dengan ukuran `16 x 16px`
 * copy icon ke `<PROJECT FOLDER>/squashfs-root/usr/share/icons/hicolor/scalable/places/`
 * lalu masuk ke `chroot`
@@ -478,21 +460,65 @@ Type=Application
 DesktopNames=XFCE
 ```
 
---------------------
-## Install LaporHama
-`sudo apt -y install libgconf2-4`
-
-----
-## Setting Favorites Menu
+----------------------------------------------------------------
+## :octocat: Install LaporHama, modularitea dan About TealinuxOS
+* copykan `LaporHama`, `modularitea`, `AboutTealinuxos` ke `/usr/share/tealinux/`
+* kemudian copykan `*.desktop` ke `/usr/share/applications`
+* copykan `icon` ke `/usr/share/pixmaps` 
+* selanjutnya install dependency
 * masuk `chroot`
-* lalu `nano /etc/xdg/xdg-xubuntu/xfce4/whiskermenu/defaults.rc`
-* cari
+* lalu 
 ```
-favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,libreoffice-writer.desktop,libreoffice-calc.desktop,pidgin.desktop,org.gnome.Software.desktop,exo-terminal-emulator.desktop,xfhelp4.desktop
+sudo apt -y install libgconf2-4
+sudo apt install npm
+sudo npm i -g yarn
+sudo npm i -g nodemon
 ```
-* ubah menjadi
+* kemudian `cd /etc/systemd/system`
+* lalu `nano apptealinux.service` dan isikan
 ```
-favorites=exo-web-browser.desktop,exo-mail-reader.desktop,exo-file-manager.desktop,libreoffice-writer.desktop,libreoffice-calc.desktop,pidgin.desktop,org.gnome.Software.desktop,exo-terminal-emulator.desktop,xfhelp4.desktop,tea-installer-gtk.desktop,tea-maker-gtk.desktop,LaporHama.desktop,dynamic-wallpaper.desktop
+[Unit]
+Description=server tea service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+ExecStart=/usr/bin/node /usr/share/tealinux/TeaAppServer/index.js
+Type=simple
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production PORT=3333
+```
+* Selanjutnya `systemctl enable apptealinux.service`
+
+----------------------------------------------------------------
+## :octocat: (OPTIONAL) Menambahkan patch untuk nvidia pci error
+patch ini berlaku untuk laptop intel core generasi 6,7 yang menggunakan vga diskrit nvidia.
+> contoh laptop asus ROG, X550V, 15-ab549tx
+
+cara memasang patch. tambahkan `pci=noaer` setelah `quiet splash` pada
+```
+<PROJECT-FOLDER>/custom-live-iso/isolinux/txt.cfg
+<PROJECT-FOLDER>/custom-live-iso/boot/grub/grub.cfg
+<PROJECT-FOLDER>/squashfs-root/etc/default/grub
 ```
 
+----------------------------------------------------------
+## :octocat: (ERROR) Jika ada error di installasi GRUB EFI
+##### Patch ini berlaku untuk laptop yang menggunakan UEFI. Penyebab error
+```
+Broken grub-efi-amd64-signed:amd64 Depends on grub-efi-amd64
+Considering grub-efi-amd64:amd64 1 as a solution to grub-efi-amd64-signed:amd64
+grub-efi-amd64-signed : Depends: grub-efi-amd64 (= 2.02~beta2-36ubuntu3.7) but it is not going \
+ to be installed
+Investigating () shim-signed
+Broken shim-signed:amd64 Depends on grub-efi-amd64-bin
+```
+#### Cara Mengatasi
+* masuk chroot
+* lalu
+```
+sudo apt update
+sudo apt install grub-efi-amd64-signed 
+```
 ---
