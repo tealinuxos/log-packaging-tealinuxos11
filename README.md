@@ -185,15 +185,6 @@ for background in (
 * lalu edit config `nano /etc/lightdm/lightdm-gtk-greeter.conf`
 * ubah menjadi `background=/usr/share/tealinux/wallpaper/defaults.jpg`
 
-### Mengedit lightdm-greeter themes
-* masuk `chroot`
-* lalu edit config `nano /etc/lightdm/lightdm-gtk-greeter.conf`
-* tambahkan
-```
-  theme-name=Tea-Semi
-  icon-theme-name=Papirus-Dark
-```
-
 ### Menambahkan whisker (start menu icon)
 * copy `wisker-tea.png` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
 * masuk `chroot`
@@ -209,6 +200,23 @@ for background in (
 * lalu edit config kedua `nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml`
 * *dari `<property name="ThemeName" type="string" value="Greybird"/>`*
 * *menjadi `<property name="ThemeName" type="string" value="Tea-Dark"/>`*
+
+### Menambahkan Icon Default TealinuxOS 11 (papirus)
+* buka cubic lalu masuk ke `chroot`
+* tambah ppa [papirus icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) `sudo add-apt-repository ppa:papirus/papirus`
+* lalu install `sudo apt-get install papirus-icon-theme`
+* lalu set config agar menjadi default `nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml`
+* dari `<property name="IconThemeName" type="string" value="elementary-xfce-darker"/>`
+* menjadi `<property name="IconThemeName" type="string" value="Papirus"/>`
+
+### Mengedit lightdm-greeter themes
+* masuk `chroot`
+* lalu edit config `nano /etc/lightdm/lightdm-gtk-greeter.conf`
+* tambahkan
+```
+  theme-name=Tea-Semi
+  icon-theme-name=Papirus-Dark
+```
 
 ### Menambahkan plymouth (bootanimation)
 * copy plymouth folder `stevia-tea` yang berisi `gambar plmouth, stevia-tea.script, stevia-text.plymouth, dan stevia-tea.plymouth` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/plymouth/themes`
@@ -244,14 +252,6 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor-Dark" & sudo 
 ### Menambahkan Ubiquity Icon (icon saat installasi)
 * persiapkan `cd_in_tray.png` dan `ubuntu_installed.png`
 * replace `cd_in_tray.png` dan `ubuntu_installed.png` pada `<PROJECT-FOLDER>squashfs-root/usr/share/ubiquity/pixmaps/`
-
-### Menambahkan Icon Default TealinuxOS 11
-* buka cubic lalu masuk ke `chroot`
-* tambah ppa [papirus icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) `sudo add-apt-repository ppa:papirus/papirus`
-* lalu install `sudo apt-get install papirus-icon-theme`
-* lalu set config agar menjadi default `nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml`
-* dari `<property name="IconThemeName" type="string" value="elementary-xfce-darker"/>`
-* menjadi `<property name="IconThemeName" type="string" value="Papirus"/>`
 
 ---------------------------------------------------
 ## :octocat: Menambahkan Asset Dokumentasi Tealinux
