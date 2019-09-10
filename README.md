@@ -161,7 +161,8 @@ $ ls | grep -v bootlogo | xargs rm
 
 ### Menambahkan wallpaper
 * Copy asset wallpaper ke `<PROJECT-FOLDER>/squashfs-root/usr/share/tealinux/wallpaper` (kalau tidak ada buat dulu)
-* Ubah default wallpaper pada `<PROJECT-FOLDER>/squashfs-root/etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
+* masuk `chroot`
+* Ubah default wallpaper `sudo nano /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml`
 * dari `<property name="image-path" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>`
 * menjadi `<property name="image-path" type="string" value="/usr/share/tealinux/wallpaper/defaults.jpg"/>`
 
