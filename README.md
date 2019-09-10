@@ -189,7 +189,7 @@ for background in (
 * copy `wisker-tea.png` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/pixmaps/`
 * masuk `chroot`
 * edit confg `nano /etc/xdg/xdg-xubuntu/xfce4/whiskermenu/defaults.rc`
-* lalu ubah menjadi `button-icon=wisker-tea`
+* lalu ubah `button-icon=xubuntu-logo-menu` menjadi `button-icon=wisker-tea`
 
 ### Menambahkan Tema
 * Copykan `Tea-Dark, Tea-Light, Tea-Semi` ke `<PROJECT-FOLDER>/squashfs-root/usr/share/themes`
