@@ -27,6 +27,7 @@ $ sudo apt update
 $ sudo apt install cubic
 ```
 > memilih cubic sebagai tools remaster tealinuxos 11
+<https://askubuntu.com/questions/741753/how-to-use-cubic-to-create-a-custom-ubuntu-live-cd-image>
 
 ------------------------------------------
 ## :octocat: Langkah - Langkah remastering
