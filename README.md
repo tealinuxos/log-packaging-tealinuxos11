@@ -266,7 +266,7 @@ gsettings set org.gnome.desktop.interface cursor-theme "Tea-Cursor-Dark" & sudo 
 ## :octocat: Menambahkan Keyboard Shortcut dan Ksuperkey
 * masuk `chroot`
 * install ksuperkey `sudo apt install ksuperkey`
-* tambahkan config pada autostart `sudo nano /etc/xdg/autostart`
+* tambahkan config pada autostart `sudo nano /etc/xdg/autostart/superkey.desktop`
 ```
 [Desktop Entry]
 Name=Super Key
