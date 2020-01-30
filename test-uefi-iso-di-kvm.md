@@ -1,4 +1,4 @@
-
+### Install VMM dan Configure OVMF
 Install [VMM](https://virt-manager.org/) dan [OVMF](http://www.linux-kvm.org/page/OVMF)
 ```
 sudo apt update
@@ -18,4 +18,7 @@ nvram = [
    "/usr/share/AAVMF/AAVMF32_CODE.fd:/usr/share/AAVMF/AAVMF32_VARS.fd"
 ]
 ```
-`Teks mungkin akan sedikit berbeda`
+`Teks mungkin akan sedikit berbeda harap dimengerti`
+lalu `Ctrl + X`, ketik `y`, enter
+
+### Buat VM dengan UEFI support
