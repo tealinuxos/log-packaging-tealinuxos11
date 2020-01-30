@@ -62,3 +62,5 @@ lalu `Ctrl + X`, ketik `y`, enter
 10. Klik `Begin Installation` lalu buka terminal dan masukkan `sudo efibootmgr -v` jika tak ada masalah, maka anda telah boot iso dalam mode efi
 
    ![alt text](https://raw.githubusercontent.com/catzy007/log-packaging-tealinuxos11/master/efi-step/10.png "Img10")
+   
+> Perlu diingat bahwa penggantian `Firmware` dan `Chipset` hanya dapat dilakukan saat pembuatan VM, Jika perlu balik ke standar BIOS, dapat dilakukan dengan mambuat VM baru
