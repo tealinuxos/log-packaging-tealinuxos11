@@ -15,6 +15,12 @@ Untuk pengembangan dan perbaikan lebih lanjut.
 Pada iso ini, pengetest dapat berupa siapa saja mulai dari sesepuh hingga calon anggota. Diharapkan semua anggota aktif ikut serta melakukan testing 
 untuk mengumpulkan data yang beragam. Data yang dihasilkan dapat didokumentasikan (Misal dengan Google Form).
 
+Testing dapat berupa virtual dan baremetal.
+
+Untuk testing UEFI di VM dapat menggunakan <https://github.com/catzy007/log-packaging-tealinuxos11/blob/master/test-uefi-iso-di-kvm.md>
+
+Untuk testing baremetal dapat melihat `Keberagaman Hardware & Software`
+
 ### Pengumpulan Data
 Untuk data yang dikumpulkan dapat berupa :
 1. Nama / Nickname
@@ -58,7 +64,7 @@ Mikroarsitektur dapat berupa
     * 2019 Zen2 (ryzen 3000 series)
 
 Graphic
-* Nvidia 600, 700, 900, 1000, 2000 series and mobile
+* Nvidia 400, 500, 600, 700, 900, 1000, 2000 series and mobile
 * Intel Inside, HD, UHD
 * AMD Radeon HD, R5, R7, R9, RX series
 
