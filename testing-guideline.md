@@ -65,7 +65,7 @@ Mikroarsitektur dapat berupa
 
 Graphic
 * Nvidia 400, 500, 600, 700, 900, 1000, 2000 series and mobile
-* Intel Inside, HD, UHD
+* Intel GMA, HD, UHD
 * AMD Radeon HD, R5, R7, R9, RX series
 
 Add On
