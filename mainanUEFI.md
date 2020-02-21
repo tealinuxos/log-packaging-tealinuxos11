@@ -106,12 +106,12 @@ lalu
 ```
 sudo apt-get install -y grub-efi-amd64-signed os-prober shim-signed linux-headers-generic linux-signed-generic
 ```
-#### log packaging tealinuxos 11.1
+## log packaging tealinuxos 11.1
 mengembalikan lsb_release, menghapus TealinuxOS.info dan reinstall grub 
 akan membuat grub efi tealinux bekerja
 
 *dengan catatan legacy support akan drop atau iso hanya dapat install uefi.
-untuk legacy dapat install dengan syarat lakukan boot-repair
+untuk legacy dapat install dengan syarat lakukan boot-repair*
 
 ### Todo
 ##### app yang diinstall
