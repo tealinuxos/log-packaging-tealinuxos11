@@ -96,7 +96,7 @@ Boot2003* EFI Network	RC
 
 * Untuk testing, disarankan mengetest ISO yang dibuat menggunakan laptop/PC yang mendukung UEFI (biasanya intel core gen2 keatas sudah mendukung) juga mengetest di laptop yang menggunakan mode BIOS (biasanya core 2 duo kebawah)
 
-### Hasil riset dari lepi safira
+## Hasil riset dari lepi safira
 ```
 sudo dpkg --configure -a
 sudo apt-get install -fy
@@ -107,7 +107,7 @@ lalu
 sudo apt-get install -y grub-efi-amd64-signed os-prober shim-signed linux-headers-generic linux-signed-generic
 ```
 ## log packaging tealinuxos 11.1
-mengembalikan lsb_release, menghapus TealinuxOS.info dan reinstall grub 
+mengembalikan `lsb_release`, menghapus `TealinuxOS.info` dan reinstall `grub` 
 akan membuat grub efi tealinux bekerja
 
 *dengan catatan legacy support akan drop atau iso hanya dapat install uefi.
@@ -134,15 +134,15 @@ DISTRIB_RELEASE=18.04
 DISTRIB_CODENAME=bionic
 DISTRIB_DESCRIPTION="Ubuntu 18.04.2 LTS"
 ```
-hapus info lama
+#### Hapus TealinuxOS.info
 ```
 rm /usr/share/python-apt/templates/TealinuxOS.info
 ```
-#### Reinstall grub lagi dengan lsb ubuntu
+#### Reinstall grub lagi dengan lsb yang telah diupdate
 ```
 sudo apt install grub-pc-bin grub-efi-amd64-signed shim-signed grub*-common --reinstall
 ```
-#### Removed somehow
+#### Package ini mungkin akan terhapus, sebaiknya direinstall
 ```
 ubiquity* ubiquity-frontend-gtk*
 ```
