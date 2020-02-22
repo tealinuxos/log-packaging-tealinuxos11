@@ -121,6 +121,9 @@ sudo apt install gnome-disk-utility htop catfish
 ```
 #### Reinstall grub-efi
 ```
+sudo dpkg --configure -a
+sudo apt-get install -fy
+sudo apt-get purge -y grub*-common grub-common:i386 shim-signed
 sudo apt install grub-pc-bin grub-efi-amd64-signed shim-signed
 ```
 #### Restore lsb-release
