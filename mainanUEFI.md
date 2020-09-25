@@ -95,3 +95,57 @@ Boot2003* EFI Network	RC
 >  As far as UEFI support goes, Cubic uses files from your host machine to create the EFI ISO. Therefore, you need to create the custom Ubuntu or Linux Mint ISO while using a host system that uses EFI to be able to create an EFI-enabled custom ISO. See [Launchpad](https://answers.launchpad.net/cubic/+question/387566) for details.
 
 * Untuk testing, disarankan mengetest ISO yang dibuat menggunakan laptop/PC yang mendukung UEFI (biasanya intel core gen2 keatas sudah mendukung) juga mengetest di laptop yang menggunakan mode BIOS (biasanya core 2 duo kebawah)
+
+## Hasil riset dari lepi safira
+```
+sudo dpkg --configure -a
+sudo apt-get install -fy
+sudo apt-get purge -y grub*-common grub-common:i386 shim-signed
+```
+lalu
+```
+sudo apt-get install -y grub-efi-amd64-signed os-prober shim-signed linux-headers-generic linux-signed-generic
+```
+## log packaging tealinuxos 11.1
+mengembalikan `lsb_release`, menghapus `TealinuxOS.info` dan reinstall `grub` 
+akan membuat grub efi tealinux bekerja
+
+*dengan catatan legacy support akan drop atau iso hanya dapat install uefi.
+untuk legacy dapat install dengan syarat lakukan boot-repair*
+
+### Todo
+##### app yang diinstall
+```
+sudo apt update
+sudo apt install gnome-disk-utility htop catfish
+```
+#### Reinstall grub-efi
+```
+sudo dpkg --configure -a
+sudo apt-get install -fy
+sudo apt-get purge -y grub*-common grub-common:i386 shim-signed
+sudo apt install grub-pc-bin grub-efi-amd64-signed shim-signed
+```
+#### Restore lsb-release
+```
+sudo nano /etc/lsb-release
+```
+lalu edit menjadi
+```
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.2 LTS"
+```
+#### Hapus TealinuxOS.info
+```
+rm /usr/share/python-apt/templates/TealinuxOS.info
+```
+#### Reinstall grub lagi dengan lsb yang telah diupdate
+```
+sudo apt install grub-pc-bin grub-efi-amd64-signed shim-signed grub*-common --reinstall
+```
+#### Package ini mungkin akan terhapus, sebaiknya direinstall
+```
+ubiquity* ubiquity-frontend-gtk*
+```
